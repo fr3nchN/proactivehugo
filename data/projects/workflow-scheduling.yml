@@ -1,9 +1,0 @@
-weight: 1
-title: "ProActive Workflows & Scheduling"
-description: "Reduce execution time. Reduce infrastructure costs"
-content: 
-    - "Easy to use with web portals"
-    - "Rich APIs: Java, REST, CLI"
-    - "Extensible"
-image: "images/proactive-logos/logo-proactive-workflows-scheduling.png"
-link: "https://www.activeeon.com/workflows-scheduling"

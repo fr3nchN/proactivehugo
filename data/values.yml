@@ -1,0 +1,43 @@
+list:
+  - weight: 1
+    title: "Controlled Execution and Scheduling"
+    content:
+        - User friendly scheduling system
+        - Error management system
+        - Priority management
+        - Event driven execution
+    image: "images/values/value-control.png"
+  - weight: 2
+    title: "Controlled Scalability"
+    content: 
+        - Multi, hybrid, private & public cloud
+        - Dynamic scaling on workload
+        - Controlled Scalability
+    image: "images/values/value-scalable.png"
+  - weight: 3
+    title: "Expressive Workflows"
+    content:
+        - Graphical workflows and dependencies
+        - Powerful replication system
+        - Variable and file sharing
+    image: "images/values/value-wf.png"
+  - weight: 4
+    title: "Execution Analysis"
+    content:
+        - Check deviations
+        - Log fetching
+    image: "images/values/value-monitor.png"
+  - weight: 5
+    title: "Workflow as Code"
+    content:
+        - Full revision control
+        - Integrate into existing CI/CD pipelines
+        - Catalog
+    image: "images/values/value-wfascode.png"
+  - weight: 6
+    title: "Seamless Integration"
+    content:
+        - Transition to the Cloud
+        - Translate existing workflows
+        - Comprehensive Rest API
+    image: "images/values/value-integrate.png"

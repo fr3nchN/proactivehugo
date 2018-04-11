@@ -1,0 +1,97 @@
+dev:
+  - weight: 1
+    title: Develop Once, Deploy Anywhere
+    image: images/ml-os/screenshot-resources.png
+    content: |
+      Become agnostic to the resource from dev to prod. Deploy Machine Learning in production in minutes.
+
+      - Benefit from an abstraction layer on the resource
+      - Run workloads locally, on-prem, in the cloud (Azure, AWS, Gcloud, OpenStack, VmWare, etc.)
+      - Move to production in minutes and not hours or days
+  - weight: 2
+    title: Data source connectors
+    image: images/ml-os/screenshot-data-connectors-2.png
+    content: | 
+      Connect to the most popular data source with a simple drag & drop
+
+      - Filesystem, FTP, HTTP, SSH, SFTP
+      - PostgreSQL, MySQL
+      - Analytic SQL (Greenplum, etc.)
+      - NoSQL (MongoDB, Cassandra, Elasticsearch)
+      - Hadoop (HDFS)
+      - Cloud (S3, blob, buckets)
+      - Scality
+  - weight: 3
+    title: Scripted resource selection
+    image: images/ml-os/screenshot-selection-script.png
+    content: |
+      Select dynamically the resource required: GPU, RAM, OS, lib, etc.
+
+      - Select the most relevant resource based on hardware requirements (GPU, RAM, etc.)
+      - Based on location (Azure, AWS, OpenStack, VmWare, On-Prem, In France, In US, etc.)
+      - Based on variable information (latency, bandwidth, etc.)
+      - Based on OS configuration (Docker enabled, Python3 enabled, etc.)
+  - weight: 4
+    title: Simplified Docker Integration
+    image: images/ml-os/screenshot-docker.png
+    content: |
+      Share files and variables across containers
+
+      - Propagate variables through containers
+      - Share files through containers via our Dataspace
+      - Ensure all the libraries are available in any environment
+  - weight: 5
+    title: Develop with any library and devops tools
+    image: images/ml-os/screenshot-hub.png
+    content: |
+      Enjoy a fully open system and leverage the best libraries. Setup a complete machine learning orchestration system.
+
+      - Integrate with any Machine Learning and Deep Learning libraries
+      - Extend the studio with custom packages from your team 
+      - Extend the studio with our community packages on the hub
+
+
+prod:
+  - weight: 1
+    title: Error management and alerts
+    image: images/ml-os/error-mgt.png
+    content: |
+      Setup simple recovery rules in case of errors  
+
+      - Advanced error management policies (kill job, suspend dependent tasks, ignore, etc.)
+      - Setup alerts on error
+  - weight: 2
+    title: Schedule and monitor workloads
+    image: images/ml-os/monitoring.png
+    content: |
+      Plan jobs, add execution exceptions and monitor them
+
+      - Setup cron expression to repeat execution
+      - Setup periods of non execution (e.g. for maintenance)
+      - Setup additional execution (e.g. for bank holidays)
+      - Monitor all jobs from a single interface
+  - weight: 3
+    title: Fast time to result with distribution system and cloud bursting
+    image: images/ml-os/replication-2.png
+    content: |
+      Improve time to result with integrated control structures
+
+      - Run algorithms in parallel
+      - Leverage multi-threading at ease
+      - Prioritize important reports
+  - weight: 4
+    title: Lifecycle management of services and application
+    image: images/ml-os/lifecycle.png
+    content: |
+      Manage lifecycles required for jobs or for cost purposes
+
+      - Automatically trigger servers such as Visdom for visualization
+      - Monitor service utilization and resizing
+  - weight: 5
+    title: Comprehensive Rest API
+    image: images/ml-os/rest.png
+    content: |
+      Integrate and build with a completely open solution
+      
+      - Trigger workflow execution, prioritization, etc. from external applications
+      - Monitor execution from thrid party services

@@ -1,0 +1,40 @@
+notes:
+  - weight: 6
+    title: Asynchrony
+    description: "Calls on Active Objects are asynchronous: an answer, a future, is provided without waiting for the end of the result processing."
+  - weight: 8
+    title: Data Spaces
+    description: A virtual file system layer that allow files to be accessed among all Active Objects, accross networks and computers
+  - weight: 3
+    title: Fault Tolerance
+    description: Application can be configured to be self-healing and restart automatically from latest valid checkpoint.
+  - weight: 2
+    title: File Transfer
+    description: Files can be transmitted from or to a remote node at different stage of the application lifecycle
+  - weight: 13
+    title: GCM
+    description: Grid Component Model API is based on and extends the Fractal model to enable component programming in ProActive.
+  - weight: 7
+    title: Legacy Code Wrapping
+    description: Efficient methods to wrap, couple, and gridify legacy code with ProActive, including MPI or other native codes
+  - weight: 1
+    title: Master-Worker
+    description: A Task-Based API for solving Master-Worker type computations (one Master, many workers)
+  - weight: 9
+    title: Mobility
+    description: Active Objects have the ability to migrate between nodes while the application is running.
+  - weight: 4
+    title: Monte-Carlo
+    description: A Task-based API similar to Master-Worker, specialized for monte-carlo simulations
+  - weight: 12
+    title: Remote Accessibility
+    description: Methods defined by active objects can be called from any point of the application.
+  - weight: 11
+    title: Security
+    description: Communications can be encrypted using a private/public key mechanism to ensure fully secure data transmissions
+  - weight: 10
+    title: SPMD
+    description: SPMD technique is perfect for solving tightly-coupled parallel problems requiring intensive communications (CFD, Maxwell,...). This is an alternative to MPI in Java
+  - weight: 5
+    title: Web Services
+    description: ProActive Programming Active Objects and GCM components can be exposed as web services without any additional development

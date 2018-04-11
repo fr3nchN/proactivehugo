@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+
+	{{ partial "head.html" . }}
+
+	<body>
+    
+    {{ partial "g_tagmanager-noscript.html" . }}
+    {{ partial "navbar.html" . }}
+
+    <div {{ with .Page.Params.bgheaderimage }}class="jumbotron jumbotron-fluid {{.}}"{{ else }}class="jumbotron jumbotron-fluid background-image-getstarted"{{ end }}>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 text-white">
+                    <h1 class="display-3">{{ .Page.Params.Title }}</h1>
+                    {{ with .Page.Params.Subtitle }}<p class="h2 mb-4">{{ . | markdownify }}</p>{{ end }}
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    {{ block "main" . }}{{ end }}
+
+    {{ block "footer" . }}
+        {{ partial "footer.html" . }}
+    {{ end }}
+
+    {{ block "javascript" . }}
+        {{ partial "javascript.html" . }}
+    {{ end }}
+
+	</body>
+</html>

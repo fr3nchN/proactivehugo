@@ -1,0 +1,28 @@
+list:
+  - weight: 1
+    title: "ProActive Workflows & Scheduling"
+    description: "Reduce execution time. Reduce infrastructure costs"
+    content: 
+        - "Easy to use with web portals"
+        - "Rich APIs: Java, REST, CLI"
+        - "Extensible"
+    image: "images/proactive-logos/logo-proactive-workflows-scheduling.png"
+    link: "https://www.activeeon.com/workflows-scheduling"
+  - weight: 2
+    title: "ProActive Big Data Automation"
+    description: "Accelerate Scientific and Statistical Computing"
+    content: ["Parallelization for your toolbox", "Integrated in your environment", "Benefit from many resources: desktop, cluster and clouds"]
+    image: "images/proactive-logos/logo-proactive-big-data-automation.png"
+    link: "https://www.activeeon.com/big-data-automation"
+  - weight: 3
+    title: "ProActive Cloud Automation"
+    description: "Your Open Automation Platform to Optimize your IT operations"
+    content: ["Automatic scaling", "Ensure fault tolerance", "Ease maintenance"]
+    image: "images/proactive-logos/logo-proactive-cloud-automation.png"
+    link: "https://www.activeeon.com/cloud-automation"
+  - weight: 4
+    title: "ProActive Programming"
+    description: "Java middleware for parallel and distributed computing"
+    content: ["SPMD model", "Fault tolerance", "Java SDK"]
+    image: "images/proactive-logos/logo-proactive-programming.png"
+    link: "programming"

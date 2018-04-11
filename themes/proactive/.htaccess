@@ -1,0 +1,9 @@
+
+ErrorDocument 404 /404.html
+
+Redirect /index.php http://proactive.activeeon.com
+Redirect /releasenotes http://proactive.activeeon.com/release-notes/
+Redirect /pacagrid/ http://proactive.activeeon.com
+Redirect /index.php/?page=nqueens25 http://proactive.activeeon.com
+Redirect /index.php/?page=careers http://proactive.activeeon.com
+

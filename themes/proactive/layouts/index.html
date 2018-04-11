@@ -5,6 +5,7 @@
 
 	<body>
 
+		{{ partial "g_tagmanager-noscript.html" . }}
 		{{ partial "navbar.html" . }}
 
 		<div class="background-image border-bottom-grey">
@@ -21,7 +22,6 @@
 			</div>
 		</div>
 
-		{{ if gt (len .Site.Data.news) 0 }}
 		<div class="background-lightgray border-bottom-grey">
 			<div class="container pb-3 pt-3">
 				<div class="row justify-content-md-center">
@@ -31,7 +31,7 @@
 				    </div>
 				</div>
 				<div class="row">
-				    {{ range $index, $element := sort .Site.Data.news "weight" }}
+				    {{ range $index, $element := sort .Site.Data.news.list "weight" }}
 				    <div class="col-sm-4 text-center">
 				        <h3 class="h4 text-orange">{{ $element.title}}</h3>
 				        <p>{{ $element.content }}</p>
@@ -41,15 +41,19 @@
 				<div class="row justify-content-md-center">
 				    <div class="col-md-8 text-center">
                         <hr />
+                        <h3 class="h5">Share code: workflows, scripts, calendars, etc. on our community <a target="_blank" href="http://hub.activeeon.com">Hub</a></h3>
+				    </div>
+				</div>
+                <div class="row justify-content-md-center">
+				    <div class="col-md-8 text-center">
+                        <hr />
 				        <a class="btn btn-outline-secondary" href='{{ with .Site.GetPage "page" "release-notes.md" }}{{ .URL }}{{ end }}'>Latest Release</a>
 				    </div>
 				</div>
 			</div>
 		</div>
-		{{ end }}
 
 
-		{{ if gt (len .Site.Data.values) 0 }}
 		<div class="container mb-3 mt-5">
 			<div class="row mb-5 justify-content-md-center">
 				<div class="col-md-8 text-center">
@@ -58,7 +62,8 @@
 				    <p class="h5">Workflow engine to automate and orchestrate your business processes</p>
 				</div>
 			</div>
-			{{ range $index, $element := sort .Site.Data.values "weight" }}
+			{{ $len := len .Site.Data.values.list }} 
+			{{ range $index, $element := sort .Site.Data.values.list "weight" }}
 			<div class="row align-items-center justify-content-md-center">
 				{{ if eq (mod $index 2) 0 }}
 				<div class="col-md-3">
@@ -85,7 +90,7 @@
 				    <img src="{{ $.Site.BaseURL }}{{ $element.image }}" alt="{{ $element.title }}" class="img-fluid" />
 				</div>
 				{{ end }}
-				{{ if lt $index 5 }}
+				{{ if ne (add $index 1) $len }}
 				<div class="col-md-8">
 				    <hr />
 				</div>
@@ -93,7 +98,6 @@
 			</div>
 			{{ end }}
 		</div>
-		{{ end }}
 
 		<div class="background-home-request">
 			<div class="background-orange-transparent">
@@ -108,7 +112,6 @@
 			</div>
 		</div>
 
-		{{ if gt (len .Site.Data.features) 0 }}
 		<div class="container mt-4">
 			<div class="row justify-content-md-center">
 				<div class="col-md-8 text-center">
@@ -117,7 +120,7 @@
 				</div>
 			</div>                                                                                                        
 			<div class="row justify-content-md-center">
-				{{ range $index, $element := sort .Site.Data.features "weight" }}
+				{{ range $index, $element := sort .Site.Data.features.list "weight" }}
 				<div class="col-md-4 text-center m-3">
 				    <h3>{{ $element.title }}</h3>
 				    <ul class="list-unstyled text-muted">
@@ -129,7 +132,6 @@
 				{{ end }}
 			</div>
 		</div>
-		{{ end }}
 
 		<div class="background-lightgray border-bottom-grey border-top-grey">
 			<div class="container pb-3 pt-3">
@@ -144,7 +146,7 @@
 				            ProActive Parallel Suite platforms features High-Performance Workflows and Application Parallelization, together with enterprise Scheduling and Orchestration coupled with the dynamic management of private Heterogeneous Grids and Clouds. With a ProActive platform, our users tackle at once the acceleration and orchestration of all demanding enterprise applications, and the management of their own Enterprise Cloud.
 				        </p>
 				        <p>
-				            Professional support and services are delivered by <a href="{{ .Site.Params.Links.Activeeon.home }}" target="_blank">ActiveEon company.</a>
+				            Professional support and services are delivered by <a href="{{ .Site.Params.Links.Activeeon.home }}" target="_blank">Activeeon company.</a>
 				        </p>
 				        <p class="text-center">
 				            <hr/>
@@ -155,8 +157,7 @@
 				    </div>
 				    <div class="col-lg-5">
 				        <div class="row">
-				            {{ if gt (len .Site.Data.projects) 0 }}
-				            {{ range $index, $element := sort .Site.Data.projects "weight" }}
+				            {{ range $index, $element := sort .Site.Data.projects.list "weight" }}
 				            <div class="col-sm-5 background-verylightgray m-1 pt-2">
 				                <img src="{{ $.Site.BaseURL }}{{ $element.image }}" alt={{ $element.title }} class="img-fluid mb-2"/>
 				                <p><small>
@@ -169,7 +170,6 @@
 				                    <li><a href="{{ $element.link }}" target="_blank">more...</a></li>
 				                </small></ul>
 				            </div>
-				            {{ end }}
 				            {{ end }}
 				        </div>
 				    </div>
@@ -185,7 +185,7 @@
 				            <h2>Try Online</h2>
 				            <hr/>
 				            <p class="h4">
-				                Try it for free <a href="{{ .Site.Params.Links.Activeeon.home }}" target="_blank">here</a> and follow this tutorial in <a href="getstarted">3 steps</a>.
+				                Try it for free <a href="{{ .Site.Params.Links.Activeeon.home }}" target="_blank">here</a> and follow this tutorial in <a href='{{ with .Site.GetPage "page" "get-started.md" }}{{ .URL }}{{ end }}'>3 steps</a>.
 				            </p>
 				            <div>
 				                <a class="btn btn-outline-primary" href="{{ .Site.Params.Links.Activeeon.try }}" target="_blank">Try It</a>
@@ -228,8 +228,13 @@
 			</div>
 		</div>
 
-		{{ partial "footer.html" . }}
-		{{ partial "javascript.html" . }}
+		{{ block "footer" . }}
+			{{ partial "footer.html" . }}
+		{{ end }}
+
+		{{ block "javascript" . }}
+			{{ partial "javascript.html" . }}
+		{{ end }}
 	
 	</body>
 </html>

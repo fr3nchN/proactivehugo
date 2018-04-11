@@ -1,6 +1,0 @@
-weight: 4
-title: "ProActive Programming"
-description: "Java middleware for parallel and distributed computing"
-content: ["SPMD model", "Fault tolerance", "Java SDK"]
-image: "images/proactive-logos/logo-proactive-programming.png"
-link: "https://www.activeeon.com/about/resources#datasheets"

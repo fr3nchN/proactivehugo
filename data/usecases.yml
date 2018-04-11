@@ -1,0 +1,33 @@
+list:
+  - weight: 1
+    title: UK Government
+    content: |
+      Orchestrate Visa application and criminality rate analysis  
+      ___
+
+      <a href="https://www.activeeon.com/download/activeeon-case-study-homeoffice-uk-visas-application-en.pdf" class="btn btn-outline-secondary" target="_blank">Download</a>
+    image: images/usecases/usecase-homeoffice.jpeg
+  - weight: 2
+    title: IoT
+    content: |
+      IoT analytics managed through ProActive  
+      ___
+
+      <a href="https://www.activeeon.com/download/customer-case-study-iot-underground-surface-mining-operation-workflow-automation.pdf" class="btn btn-outline-secondary" target="_blank">Download</a>
+    image: images/usecases/usecase-komatsu.jpeg
+  - weight: 3
+    title: Insurance & Fintech
+    content: | 
+      Faster results and transition to the cloud
+      ___
+
+      <a href="https://www.activeeon.com/solvencyII" class="btn btn-outline-secondary" target="_blank">Download</a>
+    image: images/usecases/usecase-var.jpeg
+  - weight: 4
+    title: R&D
+    content: |
+      CNES, space agency improves user experience with cloud bursting for Big Compute
+      ___
+
+      <a href="https://www.activeeon.com/azure-poc-in-the-box" class="btn btn-outline-secondary" target="_blank">Download</a>
+    image: images/usecases/usecase-cnes.jpeg

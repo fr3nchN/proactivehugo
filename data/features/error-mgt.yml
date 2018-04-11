@@ -1,6 +1,0 @@
-weight: 1
-title: "Error Management"
-content: 
-    - Keep intermediary results
-    - Global error policy
-    - Granular policy

@@ -1,5 +1,5 @@
-#baseURL = "http://localhost:1313/"
-baseURL = "https://fr3nchn.github.io/proactivehugo/"
+baseURL = "https://proactive.activeeon.com/"
+#baseURL = "/"
 title = "ProActive from Activeeon"
 theme = "proactive"
 languageCode = "en-us"
@@ -7,7 +7,7 @@ languageCode = "en-us"
 googleAnalytics = "UA-31966922-1"
 
 [params]
-  description = "Translate business processes to IT workflows with ProActive, a flexible orchestration and scheduling solution."
+  description = "Job Scheduling, Workload Automation, Orchestration & Metascheduling on-premises and on all clouds."
   
 
 [permalinks]
@@ -24,33 +24,78 @@ googleAnalytics = "UA-31966922-1"
 [[menu.main]]
   name = "Home"
   url  = "/"
-  weight = 1
+  weight = 10
 
 [[menu.main]]
   name = "Get Started"
   url  = "/get-started/"
-  weight = 2
+  weight = 20
 
 [[menu.main]]
   name = "Community"
-  url  = "/community/"
-  weight = 3
+  url  = "#"
+  identifier = "community"
+  weight = 30
 
 [[menu.main]]
-  name = "Release Notes"
-  url  = "/release-notes/"
-  weight = 4
-
-[[menu.main]]
-  name = "Blog"
-  url  = "http://blog.activeeon.com/"
-  weight = 5
+  identifier = "product"
+  name = "Product"
+  url = "#"
+  weight = 40
 
 [[menu.main]]
   name = "About"
   url  = "/about/"
-  weight = 6
-  
+  weight = 50
+
+[[menu.main]]
+  parent = "community"
+  name = "Github & Use Cases"
+  url  = "/community/"
+  weight = 31
+
+[[menu.main]]
+  parent = "community"
+  name = "Blog"
+  url  = "http://blog.activeeon.com/"
+  weight = 32
+
+[[menu.main]]
+  parent = "community"
+  name = "Hub"
+  url  = "http://hub.activeeon.com/"
+  weight = 33
+
+[[menu.main]]
+  parent = "product"
+  name = "Workflows & Scheduling"
+  url = "https://www.activeeon.com/workflows-scheduling"
+  weight = 41
+
+[[menu.main]]
+  parent = "product"
+  name = "Big Data Automation"
+  url = "https://www.activeeon.com/big-data-automation"
+  weight = 42
+
+[[menu.main]]
+  parent = "product"
+  name = "ML Open Studio"
+  url = "/ml-os/"
+  weight = 43
+
+[[menu.main]]
+  parent = "product"
+  name = "Automation Dashboard"
+  url = "https://www.activeeon.com/cloud-automation"
+  weight = 44
+
+[[menu.main]]
+  parent = "product"
+  name = "Release Notes"
+  url  = "/release-notes/"
+  weight = 45
+
 [params.links.activeeon]
   home = "https://www.activeeon.com/"
   contact = "https://www.activeeon.com/about/contact"

@@ -1,7 +1,0 @@
-version: "7.23"
-date: 2017-01-09
-community:
-  - "New powerful GraphQL data-fetching API: get read access to scheduling information from your ProActive Scheduler in an easy and efficient manner"
-  - "Generic info interface upgraded with job variable and task variable definition features to improve user experience"
-enterprise:
-  - "New chaining of workflows added in the Control menu: \"SubmitJobNoWait\": submit a Job from the current one, and proceed to the next task without waiting for its completion (asynchronous submission); and \"SubmitJobAndWait\": submit a Job from the current one, then wait for its completion before proceeding to the next task (synchronous submission)"

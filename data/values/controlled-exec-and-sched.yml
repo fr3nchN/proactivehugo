@@ -1,8 +1,0 @@
-weight: 1
-title: "Controlled Execution and Scheduling"
-content:
-    - User friendly scheduling system
-    - Error management system
-    - Priority management
-    - Event driven execution
-image: "images/values/value-control.png"

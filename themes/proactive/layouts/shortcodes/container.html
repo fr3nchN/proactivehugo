@@ -1,0 +1,9 @@
+<div {{ with .Get "bgclass"}} class="{{.}}"{{ end }}>
+    <div class="container pt-5 pb-5">
+        <div {{ with .Get "center" }}class="row justify-content-center"{{ else }}class="row"{{ end }}>
+            <div {{ with .Get "center" }}class="col-md-8 text-center"{{ else }}class="col-md-8"{{ end }}>
+                {{ .Inner }}
+            </div>
+        </div>
+    </div>
+</div>

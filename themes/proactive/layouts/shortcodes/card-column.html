@@ -1,0 +1,14 @@
+<div class="container">
+    {{ .Inner }}
+    <div class="card-columns">
+        {{ $data := index $.Site.Data (.Get "context") (.Get "list") }}
+        {{ range $index, $element := sort $data "weight" }}
+        <div class="card">
+            <div class="card-body text-center">
+                <h4 class="card-title">{{ $element.title }}</h4>
+                <p class="card-text text-muted">{{ $element.description }}</p>
+            </div>
+        </div>
+        {{ end }}
+    </div>
+</div>

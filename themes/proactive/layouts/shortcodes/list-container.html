@@ -1,0 +1,65 @@
+<div {{ with .Get "bgclass"}} class="{{.}}"{{ end }}>
+    <div class="container pt-5 pb-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8 text-center">
+                {{ .Inner }}
+            </div>
+        </div>
+
+        {{ $contentcenter := .Get "contentcenter" }}
+        {{ $data := index $.Site.Data (.Get "context") (.Get "list") }}
+
+        {{ with .Get "center" }}
+
+        {{ range $index, $element := sort $data "weight" }}
+        <div class="row align-items-center justify-content-md-center">
+            {{ if eq (mod $index 2) 0 }}
+            <div class="col-md-4">
+                <img src="{{ $.Site.BaseURL }}{{ .image }}" alt="{{ .title }}" class="img-fluid border border-secondary" />
+            </div>
+            <div {{ with $contentcenter }}class="col-md-7 text-center"{{ else }}class="col-md-5"{{ end }}>
+                <h3 class="h4 text-blue">{{ .title }}</h3>
+                {{ with .content }}{{ . | markdownify }}{{ end }}
+            </div>
+            {{ else }}
+            <div {{ with $contentcenter }}class="col-md-7 text-center"{{ else }}class="col-md-5"{{ end }}>
+                <h3 class="h4 text-blue">{{ .title }}</h3>
+                {{ with .content }}{{ . | markdownify }}{{ end }}
+            </div>
+            <div class="col-md-4">
+                <img src="{{ $.Site.BaseURL }}{{ .image }}" alt="{{ .title }}" class="img-fluid border border-secondary" />
+            </div>
+            {{ end }}
+
+            {{ if lt (add $index 1) (len $data) }}
+            <div class="col-md-8">
+                <hr />
+            </div>
+            {{ end }}
+        </div>
+        {{ end }}
+
+        {{ else }}
+
+        {{ range $index, $element := sort $data "weight" }}
+        <div class="row align-items-center justify-content-md-center">
+            <div class="col-md-2">
+                <img src="{{ $.Site.BaseURL }}{{ .image }}" alt="{{ .title }}" class="img-fluid" />
+            </div>
+            <div class="col-md-6">
+                <h3 class="h4 text-blue">{{ .title }}</h3>
+                {{ with .content }}{{ . | markdownify }}{{ end }}
+            </div>
+
+            {{ if lt (add $index 1) (len $data) }}
+            <div class="col-md-8">
+                <hr />
+            </div>
+            {{ end }}
+        </div>
+        {{ end }}
+
+        {{ end }}
+
+    </div>
+</div>

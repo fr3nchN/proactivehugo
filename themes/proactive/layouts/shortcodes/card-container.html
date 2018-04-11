@@ -1,0 +1,63 @@
+<div {{ with .Get "bgclass" }} class="{{.}}"{{ end }}>
+    <div {{ with .Get "fluid"}}class="container-fluid pt-5 pb-5"{{ else }}class="container pt-5 pb-5"{{ end }}>
+        <div {{ with .Get "center" }}class="row justify-content-center"{{ else }}class="row"{{ end }}>
+            <div {{ with .Get "center" }}class="col-lg-12 text-center"{{ else }}class="col-lg-12"{{ end }}>
+                {{ .Inner }}
+            </div>
+            {{ $data := index $.Site.Data (.Get "context") (.Get "list") }}
+            {{ with .Get "itemsperrow" }}
+                {{ $len := len $data }}
+                {{ $itemsPerRow := . }}
+                {{ range $i, $e := seq 0 $itemsPerRow (sub $len 1) }}
+                <div class="col-12 card-deck mb-4">
+                    {{ if ne $e 0 }}
+                        {{ range $index, $element := first $itemsPerRow (after $e (sort $data "weight")) }}
+                            <div class="card">
+                                <img class="card-img-top" 
+                                    src="{{ $.Site.BaseURL }}{{ .image }}" 
+                                    alt="{{ .title }}" />
+                                <div class="card-body text-center">
+                                    <p class="h5 card-title text-dark">{{ .title }}</p>
+                                    {{ with .content }}
+                                        <p class="text-dark">{{ $element.content }}</p>
+                                    {{ end }}
+                                </div>
+                            </div>
+                        {{ end }}
+                    {{ else }}
+                        {{ range $index, $element := first $itemsPerRow (sort $data "weight") }}
+                            <div class="card">
+                                <img class="card-img-top" 
+                                    src="{{ $.Site.BaseURL }}{{ .image }}" 
+                                    alt="{{ .title }}" />
+                                <div class="card-body text-center">
+                                    <p class="h5 card-title text-dark">{{ .title }}</p>
+                                    {{ with .content }}
+                                        <p class="text-dark">{{ $element.content }}</p>
+                                    {{ end }}
+                                </div>
+                            </div>
+                        {{ end }}
+                    {{ end }}
+                </div>
+                {{ end }}
+            {{ else }}
+                <div class="col-12 card-deck mb-4">
+                    {{ range $index, $element := sort $data "weight" }}
+                    <div class="card">
+                        <img class="card-img-top" 
+                            src="{{ $.Site.BaseURL }}{{ .image }}" 
+                            alt="{{ .title }}" />
+                        <div class="card-body text-center">
+                            <p class="h5 card-title text-dark">{{ .title }}</p>
+                            {{ with .content }}
+                                <p class="text-dark">{{ $element.content | markdownify }}</p>
+                            {{ end }}
+                        </div>
+                    </div>
+                    {{ end }}
+                </div>
+            {{ end }}
+        </div>
+    </div>
+</div>

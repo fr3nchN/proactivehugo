@@ -1,0 +1,10 @@
+list:
+  - weight: 1
+    title: "AZURE PoC in the BOX"
+    content: "Ask for a PoC on Azure to transition to the cloud and leverage its services."
+  - weight: 2
+    title: "Machine Learning"
+    content: "Take advantage of the growth expected from analytics, with a platform optimized for integration and distribution."
+  - weight: 3
+    title: "Suse and SAP"
+    content: "Access instant insight based on SAP business data and Suse OS for processing."

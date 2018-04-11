@@ -1,7 +1,0 @@
-weight: 5
-title: "Workflow as Code"
-content:
-    - Full revision control
-    - Integrate into existing CI/CD pipelines
-    - Catalog
-image: "images/values/value-wfascode.png"

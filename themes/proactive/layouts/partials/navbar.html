@@ -8,11 +8,26 @@
         </button>
         <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
             <ul class="navbar-nav">
-				{{ range $.Site.Menus.main }}
-				<li class="nav-item">
-                    <a href="{{ .URL }}" class="nav-link">{{ .Name }}</a>
-                </li>
-                {{ end }}
+                {{ range $.Site.Menus.main }}
+                    {{ if .HasChildren }}
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            {{ .Pre }} {{ .Name }}
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        {{ range .Children }}
+                            <a class="dropdown-item" href="{{ .URL }}" {{if in .URL "http"}}target="_blank"{{end}}>{{ .Name }}</a>
+                        {{ end }}
+                        </div>
+                    </li>
+                    {{else}}
+                    <li>
+                        <a class="nav-link" href="{{.URL}}" {{if in .URL "http"}}target="_blank"{{end}}>
+                            {{ .Pre }} {{ .Name }}
+                        </a>
+                    </li>
+                    {{end}}
+                {{end}} 
             </ul>
         </div>
     </div>

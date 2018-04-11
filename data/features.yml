@@ -1,0 +1,33 @@
+list:
+  - weight: 1
+    title: "Error Management"
+    content: 
+      - Keep intermediate results
+      - Global error policy
+      - Granular policy
+  - weight: 2
+    title: "Resource Agnostic"
+    content: 
+      - Public, Private Cloud
+      - On-prem datacenter & HPC
+      - Multi-cloud and hybrid cloud strategies
+  - weight: 3
+    title: "Efficient Distribution"
+    content: 
+      - Replicate control
+      - Low overhead
+  - weight: 5
+    title: "Open"
+    content: 
+      - Rest API 
+      - Web portal and CLI 
+  - weight: 4
+    title: "Resource Preemption"
+    content: 
+      - Prioritize
+      - Get important results first
+  - weight: 6
+    title: "Docker"
+    content: 
+      - Container deployment
+      - Container environment

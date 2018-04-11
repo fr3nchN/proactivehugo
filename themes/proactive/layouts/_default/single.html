@@ -1,12 +1,4 @@
-{{ partial "header.html" . }}
+{{ define "main" }}
+  {{ .Content }}
+{{ end }}
 
-    {{ partial "navbar.html" }}
-
-    <h1>{{ .Title }}</h1>
-    {{ .Content }}
-
-    <p>{{ .Site.BaseURL }}</p>
-
-    <p>default</p>
-
-{{ partial "footer.html" . }}

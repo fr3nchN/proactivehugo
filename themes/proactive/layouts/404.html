@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+
+	{{ partial "head.html" . }}
+
+	<body>
+    
+    {{ partial "g_tagmanager-noscript.html" . }}
+    {{ partial "navbar.html" . }}
+
+	<div class="background-image border-bottom-grey mb-3">
+		<div class="jumbotron jumbotron-fluid mb-0 background-orange-transparent">		
+			<div class="container">
+                <div class="row mb-5">
+                    <div class="col-md-10 text-white">
+                        <h1 class="display-3">{{ $.Site.Title }}</h1>
+                        <p class="h2 mb-4">{{ $.Site.Params.Description }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+	<div class="container mb-3 mt-5">
+		<div class="row mb-5 justify-content-md-center">
+			<div class="col-md-8 text-center">
+				<h2>404 - I'm sorry you are lost!</h2>
+				<p class="h4">Go back to our <a href='{{ .Site.BaseURL }}'>homepage</a> to find your way.</p>
+			</div>
+		</div>
+	</div>
+
+    {{ block "footer" . }}
+        {{ partial "footer.html" . }}
+    {{ end }}
+
+    {{ block "javascript" . }}
+        {{ partial "javascript.html" . }}
+    {{ end }}
+    	
+	</body>
+</html>

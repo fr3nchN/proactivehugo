@@ -4,14 +4,15 @@
 	<meta name="googlebot" content="index,follow,snippet,archive">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	
-    <title>ProActive {{ .Title }}</title>
+    <title>{{ if .IsHome }}ProActive from Activeeon{{ else }}ProActive | {{ .Title }}{{ end }}</title>
 	<meta name="author" content={{ .Site.Author.name }} />
 	
 	{{ if .Site.Params.Description }}
 	<meta name="description" content={{ .Site.Params.Description }}>	
 	{{ end }}
 
-    {{ partial "analytics.html" . }}
+    {{ partial "g_analytics.html" . }}
+    {{ partial "g_tagmanager.html" . }}
 
     <link rel="stylesheet" href="{{ .Site.BaseURL }}css/bootstrap.min.css">
     <link rel="stylesheet" href="{{ .Site.BaseURL }}css/app.css">

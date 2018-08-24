@@ -14,7 +14,9 @@
     {{ partial "g_analytics.html" . }}
     {{ partial "g_tagmanager.html" . }}
 
-    <link rel="stylesheet" href="{{ .Site.BaseURL }}css/bootstrap.min.css">
-    <link rel="stylesheet" href="{{ .Site.BaseURL }}css/app.css">
+    {{ $owncss := resources.Get "css/main.css" }}
+    {{ $bootstrapcss := resources.Get "css/bootstrap.css" }}
+    {{ $css := slice $bootstrapcss $owncss | resources.Concat "css/style.css" | resources.Minify | resources.Fingerprint }}
+    <link rel="stylesheet" href="{{ $css.Permalink }}" integrity="{{ $css.Data.Integrity }}">
     <link rel="icon" type="image/png" href="{{ .Site.BaseURL }}images/favicon.ico"> <!-- TODO: Change Favicon -->
 </head>

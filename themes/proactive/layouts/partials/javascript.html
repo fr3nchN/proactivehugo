@@ -1,3 +1,15 @@
-<script type="text/javascript" src="{{ .Site.BaseURL }}js/jquery-3.2.1.slim.min.js"></script>
-<script type="text/javascript" src="{{ .Site.BaseURL }}js/popper.min.js"></script>
-<script type="text/javascript" src="{{ .Site.BaseURL }}js/bootstrap.min.js"></script>
+{{ $jquery := resources.Get "js/jquery-3.3.1.min.js" }}
+{{ $bootstrapjs := resources.Get "js/bootstrap.bundle.js" | resources.Minify }}
+{{ $utilscookielib := resources.Get "js/utils/js-cookie.js" | resources.Minify }}
+{{ $utilscookiecontroller := resources.Get "js/utils/cookie-controller.js" | resources.Minify }}
+{{ $js := slice $jquery $bootstrapjs $utilscookielib $utilscookiecontroller | resources.Concat "js/bundle.js" | resources.Fingerprint }}
+<script type="text/javascript" src="{{ $js.Permalink }}" integrity="{{ $js.Data.Integrity }}"></script>
+
+{{ with .Page.Params.contactform }}{{ if eq . true }}
+    {{ $contactform := resources.Get "js/form/form-contact.js" | resources.Minify }}
+    <script type="text/javascript" src="{{ $contactform.Permalink }}"></script>
+{{ end }}{{ end }}
+{{ with .Page.Params.subscriptionform }}{{ if eq . true }}
+    {{ $subscriptionform := resources.Get "js/form/form-subscribe.js" | resources.Minify }}
+    <script type="text/javascript" src="{{ $subscriptionform.Permalink }}"></script>
+{{ end }}{{ end }}

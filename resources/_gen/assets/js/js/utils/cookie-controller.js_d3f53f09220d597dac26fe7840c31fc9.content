@@ -1,0 +1,8 @@
+var PAGEVIEW_COOKIE_NAME="pageviews"
+var TIME_BETWEEN_UPDATE=15;var time=0;var page={url:window.location.href,date:new Date(),time:time};var pageviews=Cookies.getJSON(PAGEVIEW_COOKIE_NAME);if(!pageviews){pageviews=[];}
+pageIndex=pageviews.push(page)-1;Cookies.set(PAGEVIEW_COOKIE_NAME,pageviews);function updateTime(){time=time+TIME_BETWEEN_UPDATE/60;pageviews[pageIndex].time=time;Cookies.set(PAGEVIEW_COOKIE_NAME,pageviews);}
+setInterval(updateTime,TIME_BETWEEN_UPDATE*1000)
+function getPageViewCookies(){return Cookies.getJSON(PAGEVIEW_COOKIE_NAME);}
+function removePageViewCookies(){return Cookies.remove(PAGEVIEW_COOKIE_NAME);}
+function getGACookies(){return{ga:Cookies.get("_ga"),gid:Cookies.get("_gid")}}
+function getUserCookies(){return{ga:getGACookies(),pageviews:getPageViewCookies()}}

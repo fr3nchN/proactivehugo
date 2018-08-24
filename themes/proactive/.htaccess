@@ -1,9 +1,15 @@
+RewriteEngine On
+RewriteCond %{SERVER_PORT} 80
+RewriteRule ^(.*)$ https://proactive.activeeon.com%{REQUEST_URI} [R,L]
 
 ErrorDocument 404 /404.html
 
 Redirect /index.php http://proactive.activeeon.com
 Redirect /releasenotes http://proactive.activeeon.com/release-notes/
-Redirect /pacagrid/ http://proactive.activeeon.com
+Redirect /pacagrid http://proactive.activeeon.com
 Redirect /index.php/?page=nqueens25 http://proactive.activeeon.com
 Redirect /index.php/?page=careers http://proactive.activeeon.com
-
+Redirect /getstarted http://proactive.activeeon.com/get-started/
+Redirect /nqueens25.html http://proactive.activeeon.com
+Redirect /doc/ASP.ps http://proactive.activeeon.com
+Redirect /var/www/html/teams/oasis/ProActive http://proactive.activeeon.com

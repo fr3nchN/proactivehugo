@@ -14,5 +14,13 @@ nbproject/
 # Vagrant
 .vagrant/
 
+# Image generated
+/resources/
+
+# NodeJs
+node_modules/
+external-resources/lambda/**/*.zip
+
+# Html created
 public/
 docs/

@@ -9,6 +9,7 @@ googleAnalytics = "UA-31966922-1"
 [params]
   description = "Job Scheduling, Workload Automation, Orchestration & Metascheduling on-premises and on all clouds."
   
+[taxonomies]
 
 [permalinks]
   page = "/:filename/"

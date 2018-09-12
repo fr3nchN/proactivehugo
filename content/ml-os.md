@@ -50,7 +50,7 @@ ___
             <li class="list-group-item"><strong>Share</strong> workflows or tasks</li>
             <li class="list-group-item"><strong>Customize code</strong> on imported tasks for better results and performances</li>
         </ul>
-        <p><a class="btn btn-outline-primary" href='{{ .Site.Params.Links.Activeeon.try }}' target="_blank">Get Started</a></p>
+        <p><a class="btn btn-outline-primary" href='https://try.activeeon.com' target="_blank">Get Started on Try</a></p>
     </div>
 </div>
 {{% /container %}}
@@ -93,7 +93,7 @@ ___
                     </p>
                     <p>
                         <a href="mailto:contact@activeeon.com?Subject=[ProActive]%20Request%20for%20information" class="btn btn-light">Contact us</a>
-                        <a href='{{ with .Site.GetPage "page" "get-started.md" }}{{ .URL }}{{ end }}' class="btn btn-light">3 steps tutorial</a>
+                        <a href='/get-started' class="btn btn-light">3 steps tutorial</a>
                     </p>
                 </div>
             </div>

@@ -153,3 +153,15 @@ h2 {
     opacity: 0.8;
     max-height: 2rem;
 }
+
+@media (max-width: 576px) {
+    h1.display-1 {
+        font-size: 4rem;
+    }
+    h1.display-2 {
+        font-size: 4rem;
+    }
+    h1.display-3 {
+        font-size: 4rem;
+    }
+}
